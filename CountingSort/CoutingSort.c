@@ -1,3 +1,5 @@
+// Código feito em C
+
 #include <stdio.h>
 
 void coutingSort(int A[], int B[], int k, int n)
