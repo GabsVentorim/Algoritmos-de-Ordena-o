@@ -29,7 +29,6 @@ void coutingSort(int A[], int B[], int k, int n)
         C[A[j]] = A[A[j]] - 1;
     }
 
-    // nao tem q retornar b?
 }
 
 void main()
