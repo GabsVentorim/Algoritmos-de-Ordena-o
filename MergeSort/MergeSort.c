@@ -1,3 +1,5 @@
+// FEITO EM C
+
 #include <stdio.h>
 
 void merge(int A[], int i, int m, int f)
