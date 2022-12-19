@@ -46,7 +46,6 @@ void printArray(int v[], int N){
     printf("\n");
 }
 
-// Driver's code
 int main()
 {
     int v[] = { 12, 11, 13, 5, 6, 7 };
