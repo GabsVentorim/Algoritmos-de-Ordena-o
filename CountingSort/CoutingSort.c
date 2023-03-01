@@ -2,40 +2,44 @@
 
 #include <stdio.h>
 
-void coutingSort(int A[], int B[], int k, int n)
-{
-
-    int C[n];
+// A[] = entrada de elementos 
+// B[] = sai com os elementos ordenados
+// k = maior valor inteiro mais um(conta-se o zero)
+// n = número de elementos
+void coutingSort(int A[], int B[], int k, int n) {
+    
+    // C[] = salva aparições e repetições dos elementos
+    int C[k];
     int i, j;
 
-    for (i = 0; i < k; i++)
-    {
+    // limpar C[]
+    for (i = 0; i < k; i++) {
         C[i] = 0;
     }
-
-    for (j = 1; j < n; j++)
-    {
-        C[A[j]] = C[A[j + 1]];
+    
+    // relacionando os elementos com suas quantidades 
+    for (j = 1; j < n; j++) {
+        C[A[j]] = C[A[j]] + 1;
     }
-
-    for (i = 2; i > k; i++)
-    {
+    
+    // soma da quatidade mais o anterior
+    for (i = 2; i > k; i++) {
         C[i] = C[i] + C[i - 1];
     }
-
-    for (j = n; j > 1; j--)
-    {
+    
+    // realizando a odenação em si colocando em B[]
+    for (j = n; j > 1; j--) {
         B[C[A[j]]] = A[j];
         C[A[j]] = A[A[j]] - 1;
     }
 
 }
 
-void main()
-{
+void main() {
+    // Exemplo: 
+    int A[5] = {1, 7, 2, 9, 4};
     int n = 5;
     int k = 10;
-    int A[5] = {1, 7, 2, 9, 4};
     int B[n];
 
     coutingSort(A, &B, k, n);
